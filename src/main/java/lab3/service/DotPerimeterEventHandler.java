@@ -25,7 +25,7 @@ public class DotPerimeterEventHandler {
             return;
         }
         
-        var dotList = dto.getDotList();
+        List<DotDto> dotList = dto.getDotList();
         List<Double> perimeterList = new ArrayList<>();
         for (int i = 0; i < dotList.size(); i++) {
         

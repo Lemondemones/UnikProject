@@ -25,7 +25,7 @@ public class DotDistanceEventHandler {
             return;
         }
         
-        var dotList = dto.getDotList();
+        List<DotDto> dotList = dto.getDotList();
         List<Double> dotDistancesSum = new ArrayList<>();
         for (int i = 0; i < dotList.size(); i++) {
             double sum = 0;
