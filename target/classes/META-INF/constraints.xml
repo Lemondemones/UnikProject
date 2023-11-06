@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<constraint-mappings
+        xmlns="http://jboss.org/xml/ns/javax/validation/mapping"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping/validation-mapping-1.1.xsd"
+        version="1.1">
+
+    <bean class="lab4.PurePathPassage" ignore-annotations="false">
+
+        <field name="id">
+            <constraint annotation="javax.validation.constraints.Positive">
+                <message>ID должен быть > 0</message>
+            </constraint>
+        </field>
+        <field name="name">
+            <constraint annotation="javax.validation.constraints.NotBlank">
+                <message>Имя не может быть пустым</message>
+            </constraint>
+        </field>
+        <field name="length">
+            <constraint annotation="org.hibernate.validator.constraints.Range">
+                <message>Длина от 50м до 2000м</message>
+                <element name="min">50</element>
+                <element name="max">2000</element>
+            </constraint>
+        </field>
+        <field name="constructionDate">
+            <constraint annotation="javax.validation.constraints.Pattern">
+                <message>Неверная дата, формат даты: dd-MM-yyyy</message>
+                <element name="regexp">[0-9]{2}-[0-9]{2}-[0-9]{4}</element>
+            </constraint>
+        </field>
+
+
+        <field name="stationName1">
+
+            <constraint annotation="javax.validation.constraints.Size">
+                <message>Кол-во символов от 4-10</message>
+                <element name="min">4</element>
+                <element name="max">10</element>
+            </constraint>
+        </field>
+
+        <field name="stationName2">
+
+            <constraint annotation="javax.validation.constraints.Size">
+                <message>Кол-во символов от 4-10</message>
+                <element name="min">4</element>
+                <element name="max">10</element>
+            </constraint>
+        </field>
+
+        <field name="countWay">
+            <constraint annotation="javax.validation.constraints.Min">
+                <message>Кол-во путей должно больше 1</message>
+                <element name="value">1</element>
+            </constraint>
+        </field>
+
+    </bean>
+</constraint-mappings>

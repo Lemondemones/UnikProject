@@ -14,18 +14,14 @@ import java.util.List;
 @Default
 public class DotService {
 
-    private final List<DotDto> dotList;
-    private final Event<DotEventDto> distanceEvents;
-    private final Event<DotEventDto> perimeterEvents;
-    
-    
+    private  List<DotDto> dotList = new ArrayList<>();
     @Inject
-    public DotService(@DistanceEvent Event<DotEventDto> events, @PerimeterEvent Event<DotEventDto> perimeterEvents) {
-        this.dotList = new ArrayList<>();
-        this.distanceEvents = events;
-        this.perimeterEvents = perimeterEvents;
-    }
-    
+    @DistanceEvent
+    private  Event<DotEventDto> distanceEvents;
+    @Inject
+    @PerimeterEvent
+    private  Event<DotEventDto> perimeterEvents;
+
     public void addDot(DotDto dot) {
         dotList.add(dot);
         

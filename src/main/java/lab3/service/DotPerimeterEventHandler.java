@@ -1,5 +1,6 @@
 package lab3.service;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.Default;
 import lab3.annotation.PerimeterEvent;
@@ -11,12 +12,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-@Default
+@ApplicationScoped
 public class DotPerimeterEventHandler {
     
-    private static final String DELIMITER = "===============================";
+    private static  String DELIMITER = "===============================";
     
-    private static final String DEFAULT_PREFIX = "Biggest perimeter: ";
+    private static  String DEFAULT_PREFIX = "Biggest perimeter: ";
     
     public void biggestPerimeter(@Observes @PerimeterEvent DotEventDto dto) {
         System.out.println(DELIMITER);

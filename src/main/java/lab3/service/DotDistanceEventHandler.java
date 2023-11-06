@@ -1,5 +1,6 @@
 package lab3.service;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.Default;
 import lab3.annotation.DistanceEvent;
@@ -11,12 +12,12 @@ import lab3.utils.DistanceCounter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Default
+@ApplicationScoped
 public class DotDistanceEventHandler {
     
-    private static final String DELIMITER = "===============================";
+    private static  String DELIMITER = "===============================";
     
-    private static final String DEFAULT_PREFIX = "Lowest distance: ";
+    private static  String DEFAULT_PREFIX = "Lowest distance: ";
     
     public void lowestDistance(@Observes @DistanceEvent DotEventDto dto) {
         System.out.println(DELIMITER);
