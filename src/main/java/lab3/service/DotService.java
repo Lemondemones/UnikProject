@@ -16,18 +16,14 @@ import java.util.stream.Collectors;
 public class DotService {
 
     private  List<DotDto> dotList = new ArrayList<>();
+    
     @Inject
-    @DistanceEvent
-    private  Event<DotEventDto> distanceEvents;
-    @Inject
-    @PerimeterEvent
-    private  Event<DotEventDto> perimeterEvents;
+    private Event<DotEventDto> events;
 
     public void addDot(DotDto dot) {
         dotList.add(dot);
         
-        distanceEvents.fire(new DotEventDto(dotList));
-        perimeterEvents.fire(new DotEventDto(dotList));
+        events.fire(new DotEventDto(dotList));
     }
     
     public void removeDot(DotDto dot) {
@@ -37,7 +33,6 @@ public class DotService {
             throw new IllegalArgumentException("Объект не найден");
         }
         
-        distanceEvents.fire(new DotEventDto(dotList));
-        perimeterEvents.fire(new DotEventDto(dotList));
+        events.fire(new DotEventDto(dotList));
     }
 }

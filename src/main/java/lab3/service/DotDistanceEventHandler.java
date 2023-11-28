@@ -19,7 +19,7 @@ public class DotDistanceEventHandler {
     
     private static  String DEFAULT_PREFIX = "Lowest distance: ";
     
-    public void lowestDistance(@Observes @DistanceEvent DotEventDto dto) {
+    public void lowestDistance(@Observes DotEventDto dto) {
         System.out.println(DELIMITER);
         if (dto == null || dto.getDotList() == null || dto.getDotList().size() < 2) {
             System.out.println(DEFAULT_PREFIX + 0);

@@ -19,7 +19,7 @@ public class DotPerimeterEventHandler {
     
     private static  String DEFAULT_PREFIX = "Biggest perimeter: ";
     
-    public void biggestPerimeter(@Observes @PerimeterEvent DotEventDto dto) {
+    public void biggestPerimeter(@Observes DotEventDto dto) {
         System.out.println(DELIMITER);
         if (dto == null || dto.getDotList() == null || dto.getDotList().size() < 3) {
             System.out.println(DEFAULT_PREFIX + 0);
