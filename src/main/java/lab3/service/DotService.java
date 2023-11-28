@@ -28,4 +28,15 @@ public class DotService {
         distanceEvents.fire(new DotEventDto(dotList));
         perimeterEvents.fire(new DotEventDto(dotList));
     }
+    
+    public void removeDot(DotDto dot) {
+        boolean result = dotList.remove(dot);
+        
+        if (!result) {
+            throw new IllegalArgumentException("Объект не найден");
+        }
+        
+        distanceEvents.fire(new DotEventDto(dotList));
+        perimeterEvents.fire(new DotEventDto(dotList));
+    }
 }

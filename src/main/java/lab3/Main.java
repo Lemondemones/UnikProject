@@ -16,5 +16,9 @@ public class Main {
         dotService.addDot(new DotDto(1, 2));
         dotService.addDot(new DotDto(1, 3));
         dotService.addDot(new DotDto(1, 4));
+        
+        DotDto example = new DotDto(1, 20);
+        dotService.addDot(example);
+        dotService.removeDot(example);
     }
 }
