@@ -6,10 +6,19 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class DotEventDto {
-    
     private List<DotDto> dotList;
+
+    public List<DotDto> getDotList() {
+        return dotList;
+    }
+
+    public void setDotList(List<DotDto> dotList) {
+        this.dotList = dotList;
+    }
+
+    public DotEventDto(List<DotDto> dotList) {
+        this.dotList = dotList;
+    }
 }

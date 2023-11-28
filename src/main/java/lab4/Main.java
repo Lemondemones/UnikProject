@@ -10,13 +10,13 @@ public class Main {
         Validator validator = validatorFactory.getValidator();
         try {
             PathPassage pathPassage = new PathPassage();
-            pathPassage.setId(12);
-            pathPassage.setName("B108/3");
-            pathPassage.setLength(0);
-            pathPassage.setConstructionDate("10-11-2220");
-            pathPassage.setCountWay(2);
-            pathPassage.setStationName1("dwqeq");
-            pathPassage.setStationName2("wqeewq");
+            pathPassage.setId(0);
+            pathPassage.setName("");
+            pathPassage.setLength(20);
+            pathPassage.setConstructionDate("10-11-2220222");
+            pathPassage.setCountWay(21);
+            pathPassage.setStationName1("dwйц");
+            pathPassage.setStationName2("wqуц");
 
             Set<ConstraintViolation<PathPassage>> violation1 = validator.validate(pathPassage);
             if (!violation1.isEmpty()){
@@ -28,13 +28,13 @@ public class Main {
             }
 
             PurePathPassage purePathPassage = new PurePathPassage();
-            purePathPassage.setId(12);
-            purePathPassage.setName("B108/3");
-            purePathPassage.setLength(100);
-            purePathPassage.setConstructionDate("10-11-2220");
+            purePathPassage.setId(-1);
+            purePathPassage.setName("");
+            purePathPassage.setLength(20);
+            purePathPassage.setConstructionDate("1000-11-2220");
             purePathPassage.setCountWay(0);
-            purePathPassage.setStationName1("dwqeq");
-            purePathPassage.setStationName2("wqeewq");
+            purePathPassage.setStationName1("dwew");
+            purePathPassage.setStationName2("wewew");
 
             Set<ConstraintViolation<PurePathPassage>> violation2 = validator.validate(purePathPassage);
             if (!violation2.isEmpty()){

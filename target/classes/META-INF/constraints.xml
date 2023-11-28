@@ -20,7 +20,7 @@
         <field name="length">
             <constraint annotation="org.hibernate.validator.constraints.Range">
                 <message>Длина от 50м до 2000м</message>
-                <element name="min">50</element>
+                <element name="min">20</element>
                 <element name="max">2000</element>
             </constraint>
         </field>
