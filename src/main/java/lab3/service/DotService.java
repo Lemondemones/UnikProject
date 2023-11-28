@@ -10,6 +10,7 @@ import lab3.dto.DotEventDto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Default
 public class DotService {
@@ -30,7 +31,7 @@ public class DotService {
     }
     
     public void removeDot(DotDto dot) {
-        boolean result = dotList.remove(dot);
+        boolean result = dotList.removeIf(item -> dot.getX() == item.getX() && dot.getY() == item.getY());
         
         if (!result) {
             throw new IllegalArgumentException("Объект не найден");
